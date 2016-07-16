@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wordLabel" destination="BBn-W5-uSm" id="oZz-Lx-2jy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBn-W5-uSm">
+                    <rect key="frame" x="250" y="285" width="100" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="0.00195140252" green="0.68723958330000001" blue="0.0030277786859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jL8-MF-fVG">
+                    <rect key="frame" x="247" y="553" width="107" height="30"/>
+                    <state key="normal" title="Swift Controller"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0w-qW-WNd">
+                    <rect key="frame" x="247" y="508" width="106" height="30"/>
+                    <state key="normal" title="ObjC Controller"/>
+                    <connections>
+                        <action selector="objCPressed:" destination="-1" eventType="touchUpInside" id="ZTf-Ap-iUJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="jL8-MF-fVG" secondAttribute="bottom" constant="17" id="9eI-lK-Qee"/>
+                <constraint firstItem="BBn-W5-uSm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Ibo-E4-pxQ"/>
+                <constraint firstItem="jL8-MF-fVG" firstAttribute="top" secondItem="M0w-qW-WNd" secondAttribute="bottom" constant="15" id="JAu-cE-wdJ"/>
+                <constraint firstItem="BBn-W5-uSm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KZM-oM-QcZ"/>
+                <constraint firstItem="M0w-qW-WNd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a2n-pl-BZb"/>
+                <constraint firstItem="jL8-MF-fVG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aMH-L8-0JW"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
