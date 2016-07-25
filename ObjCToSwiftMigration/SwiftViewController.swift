@@ -45,5 +45,4 @@ class SwiftViewController: UIViewController {
         delegate?.phraseUpdated(updatedPhraseTextField.text)
         navigationController?.popViewControllerAnimated(true);
     }
-    
 }

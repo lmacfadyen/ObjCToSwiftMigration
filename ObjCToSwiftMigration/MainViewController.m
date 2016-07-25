@@ -31,8 +31,8 @@
 }
 - (IBAction)objCPressed:(id)sender {
     ObjCViewController *objCViewController = [[ObjCViewController alloc] init];
-    objCViewController.previousPhrase = _phraseLabel.text;
     objCViewController.delegate = self;
+    objCViewController.previousPhrase = _phraseLabel.text;
     [self.navigationController pushViewController:objCViewController animated:YES];
     
 }
