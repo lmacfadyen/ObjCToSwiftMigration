@@ -46,7 +46,6 @@
 - (void)phraseUpdated:(NSString *)phrase
 {
     _phraseLabel.text = phrase;
-
 }
 
 @end
