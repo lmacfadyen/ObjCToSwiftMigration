@@ -8,9 +8,11 @@
 
 #import "MainViewController.h"
 #import "ObjCViewController.h"
+#import "ObjCToSwiftMigration-Swift.h"
 
-@interface MainViewController () <PhraseViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *wordLabel;
+@interface MainViewController () <PhraseUpdatedDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *phraseLabel;
 
 @end
 
@@ -20,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self setTitle:@"Word Of The Day"];
+    [self setTitle:@"Phrase Of The Day"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,15 +31,21 @@
 }
 - (IBAction)objCPressed:(id)sender {
     ObjCViewController *objCViewController = [[ObjCViewController alloc] init];
-    objCViewController.word = _wordLabel.text;
+    objCViewController.previousPhrase = _phraseLabel.text;
     objCViewController.delegate = self;
     [self.navigationController pushViewController:objCViewController animated:YES];
     
 }
+- (IBAction)swiftPressed:(id)sender {
+    SwiftViewController *swiftController = [[SwiftViewController alloc]init];
+    swiftController.delegate = self;
+    swiftController.previousPhrase = _phraseLabel.text;
+    [self.navigationController pushViewController:swiftController animated:YES];
+}
 
-- (void)phraseFromController:(NSString *)phrase
+- (void)phraseUpdated:(NSString *)phrase
 {
-    _wordLabel.text = phrase;
+    _phraseLabel.text = phrase;
 
 }
 

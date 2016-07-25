@@ -10,7 +10,8 @@
 
 @interface ObjCViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *updatedPhrase;
+@property (weak, nonatomic) IBOutlet UITextField *updatedPhraseTextField;
+@property (weak, nonatomic) IBOutlet UILabel *labelPreviousPhrase;
 
 @end
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _oldValue.text = _word;
+    _labelPreviousPhrase.text = _previousPhrase;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
@@ -33,23 +34,20 @@
 
 - (void)passDataBack
 {
-    if ([_delegate respondsToSelector:@selector(phraseFromController:)])
-    {
-        [_delegate phraseFromController:_updatedPhrase.text];
-    }
-    
+    [_delegate phraseUpdated:_updatedPhraseTextField.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)dismissKeyboard {
-    [_updatedPhrase resignFirstResponder];
+    [_updatedPhraseTextField resignFirstResponder];
 }
 
 - (IBAction)donePressed:(id)sender {
-    if(_updatedPhrase.text.length>0)
+    if(_updatedPhraseTextField.text.length>0)
     {
         [self passDataBack];
     }
 }
+
 
 @end

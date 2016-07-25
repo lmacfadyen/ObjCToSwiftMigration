@@ -15,6 +15,8 @@
 		1107788B1D0334AA00636089 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 110778891D0334AA00636089 /* MainViewController.xib */; };
 		1107788F1D0335F700636089 /* ObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1107788D1D0335F700636089 /* ObjCViewController.m */; };
 		110778901D0335F700636089 /* ObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1107788E1D0335F700636089 /* ObjCViewController.xib */; };
+		1132ED8E1D3A90A6006C6F8A /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1132ED8C1D3A90A6006C6F8A /* SwiftViewController.swift */; };
+		1132ED8F1D3A90A6006C6F8A /* SwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1132ED8D1D3A90A6006C6F8A /* SwiftViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		1107788C1D0335F700636089 /* ObjCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCViewController.h; sourceTree = "<group>"; };
 		1107788D1D0335F700636089 /* ObjCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCViewController.m; sourceTree = "<group>"; };
 		1107788E1D0335F700636089 /* ObjCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjCViewController.xib; sourceTree = "<group>"; };
+		1132ED8B1D3A90A5006C6F8A /* ObjCToSwiftMigration-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCToSwiftMigration-Bridging-Header.h"; sourceTree = "<group>"; };
+		1132ED8C1D3A90A6006C6F8A /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
+		1132ED8D1D3A90A6006C6F8A /* SwiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftViewController.xib; sourceTree = "<group>"; };
+		1135D0451D465CF9003EFEDF /* PhraseUpdatedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseUpdatedDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +77,14 @@
 				1107788C1D0335F700636089 /* ObjCViewController.h */,
 				1107788D1D0335F700636089 /* ObjCViewController.m */,
 				1107788E1D0335F700636089 /* ObjCViewController.xib */,
+				1135D0451D465CF9003EFEDF /* PhraseUpdatedDelegate.h */,
 				1107787C1D031DD100636089 /* Assets.xcassets */,
 				1107787E1D031DD100636089 /* LaunchScreen.storyboard */,
 				110778811D031DD100636089 /* Info.plist */,
 				110778701D031DD100636089 /* Supporting Files */,
+				1132ED8C1D3A90A6006C6F8A /* SwiftViewController.swift */,
+				1132ED8D1D3A90A6006C6F8A /* SwiftViewController.xib */,
+				1132ED8B1D3A90A5006C6F8A /* ObjCToSwiftMigration-Bridging-Header.h */,
 			);
 			path = ObjCToSwiftMigration;
 			sourceTree = "<group>";
@@ -147,6 +157,7 @@
 				110778901D0335F700636089 /* ObjCViewController.xib in Resources */,
 				110778801D031DD100636089 /* LaunchScreen.storyboard in Resources */,
 				1107788B1D0334AA00636089 /* MainViewController.xib in Resources */,
+				1132ED8F1D3A90A6006C6F8A /* SwiftViewController.xib in Resources */,
 				1107787D1D031DD100636089 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +172,7 @@
 				1107788F1D0335F700636089 /* ObjCViewController.m in Sources */,
 				110778751D031DD100636089 /* AppDelegate.m in Sources */,
 				1107788A1D0334AA00636089 /* MainViewController.m in Sources */,
+				1132ED8E1D3A90A6006C6F8A /* SwiftViewController.swift in Sources */,
 				110778721D031DD100636089 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,10 +279,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ObjCToSwiftMigration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lawrencem.ObjCToSwiftMigration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCToSwiftMigration/ObjCToSwiftMigration-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -278,10 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ObjCToSwiftMigration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lawrencem.ObjCToSwiftMigration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjCToSwiftMigration/ObjCToSwiftMigration-Bridging-Header.h";
 			};
 			name = Release;
 		};

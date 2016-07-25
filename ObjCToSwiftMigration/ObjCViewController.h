@@ -7,17 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol PhraseViewControllerDelegate <NSObject>
-@required
-- (void)phraseFromController:(NSString *)data;
-@end
+#import "PhraseUpdatedDelegate.h"
 
 @interface ObjCViewController : UIViewController
 
-@property (nonatomic, retain) NSString *word;
-@property (nonatomic, weak) id<PhraseViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSString *previousPhrase;
+@property (nonatomic, weak) id<PhraseUpdatedDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UILabel *oldValue;
+
 
 @end
