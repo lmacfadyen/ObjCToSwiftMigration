@@ -38,7 +38,6 @@ class SwiftViewController: UIViewController {
         {
             passDataBack()
         }
-        
     }
     
     func passDataBack()
