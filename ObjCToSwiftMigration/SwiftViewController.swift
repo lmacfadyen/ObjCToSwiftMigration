@@ -27,12 +27,12 @@ class SwiftViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
-    @IBAction func donePressed(sender: AnyObject) {
+    @IBAction func donePressed(_ sender: AnyObject) {
         
         if(!updatedPhraseTextField.text!.isEmpty)
         {
@@ -43,6 +43,6 @@ class SwiftViewController: UIViewController {
     func passDataBack()
     {
         delegate?.phraseUpdated(updatedPhraseTextField.text)
-        navigationController?.popViewControllerAnimated(true);
+        _ = navigationController?.popViewController(animated: true)
     }
 }
